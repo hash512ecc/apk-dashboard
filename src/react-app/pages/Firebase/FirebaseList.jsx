@@ -34,7 +34,7 @@ const FirebaseList = () => {
     const fetchList = async (page = 1, pageSize = 10) => {
         setLoading(true);
         try {
-            const res = await request.get(`/firebase/list?page=${page}&pageSize=${pageSize}`);
+            const res = await request.get(`/api/v1/firebase/list?page=${page}&pageSize=${pageSize}`);
             if (res.data && res.data.data) {
                 setData(res.data.data);
                 setPagination({

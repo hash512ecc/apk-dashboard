@@ -12,7 +12,7 @@ const UserAdd = () => {
   const onFinish = async (values) => {
     try {
       const { username, password } = values;
-      const res = await request.post('/user/add', {
+      const res = await request.post('/api/v1/user/add', {
           username,
           password: encryptoPassword(password)
       });

@@ -4,7 +4,8 @@ import { message } from 'antd';
 
 // 创建 axios 实例
 const request = axios.create({
-  baseURL: 'https://bcapkv2.hash512ecc.workers.dev/api/v1', // 配合 vite.config.js 代理使用，或者直接写完整后端地址
+  // baseURL:"http://localhost:8787",
+  baseURL: 'https://bcapkv2.hash512ecc.workers.dev', // 配合 vite.config.js 代理使用，或者直接写完整后端地址
   timeout: 5000,
 });
 

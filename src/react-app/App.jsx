@@ -12,6 +12,7 @@ import AppList from './pages/App/AppList';
 import AppAdd from './pages/App/AppAdd'
 import FirebaseList from './pages/Firebase/FirebaseList';
 import AddFirebaseApp from './pages/Firebase/AddFirebaseApp';
+import IpAdd from './pages/Ip/Add';
 
 // 路由守卫组件
 const PrivateRoute = ({ children }) => {
@@ -45,9 +46,12 @@ function App() {
              {/* Application模块 */}
              <Route path="apps/list" element={<AppList />} />
              <Route path="apps/add" element={<AppAdd />} />
-
+            {/* firebase模块 */}
              <Route path="firebase/list" element={<FirebaseList />} />
              <Route path='firebase/add' element={<AddFirebaseApp/>}/>
+
+             {/* IP管理 */}
+              <Route path="ip/setting" element={<IpAdd/>} />
           </Route>
         </Routes>
       </BrowserRouter>

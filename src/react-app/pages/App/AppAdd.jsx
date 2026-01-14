@@ -13,7 +13,7 @@ const AppAdd = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const res = await request.get('/app/countries');
+        const res = await request.get('/api/v1/app/countries');
         if (res.code === 200 && Array.isArray(res.data)) {
           // 4. 将接口返回的 ["India", "Paskasia"] 转换为 [{value: 'India'}, ...] 格式
           const options = res.data.map(item => ({ value: item, label: item }));
@@ -29,7 +29,7 @@ const AppAdd = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      await request.post('/app/add', {
+      await request.post('/api/v1/app/add', {
         ...values,
         vpn:values.vpn && values.vpn.split(/\s+/) || undefined
       });

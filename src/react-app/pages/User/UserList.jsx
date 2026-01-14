@@ -12,7 +12,7 @@ const UserList = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await request.get('/user/users');
+      const res = await request.get('/api/v1/user/users');
       setData(res.data);
     } catch (e) {
       console.error(e);

@@ -1,7 +1,7 @@
 // src/layouts/MainLayout.jsx
 import React, { useState } from 'react';
 import { Layout, Menu, Button, theme } from 'antd';
-import { UserOutlined, AppstoreOutlined, LogoutOutlined,DatabaseOutlined  } from '@ant-design/icons';
+import { UserOutlined, AppstoreOutlined, LogoutOutlined,DatabaseOutlined,SettingOutlined  } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
@@ -47,6 +47,14 @@ const MainLayout = () => {
         { key: '/users/add', label: 'New' },
       ],
     },
+    {
+      key:"/ips",
+      icon:<SettingOutlined />,
+      label:"IP Control",
+      children:[
+        { key: '/ip/setting', label: 'Setting' },
+      ]
+    }
   ];
 
   return (

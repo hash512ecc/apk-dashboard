@@ -25,10 +25,10 @@ const AddFirebaseApp = () => {
         setLoading(true);
         try {
             const payload = formatPayload(values);
-            await request.post('/firebase/add', payload);
+            await request.post('/api/v1/firebase/add', payload);
             message.success('Firebase App 添加成功');
             form.resetFields();
-        navigate('/firebase/list');
+            navigate('/firebase/list');
         } catch (error) {
             // JSON 解析错误会在这里捕获并提示
             message.error(error.message || '添加失败');

@@ -13,7 +13,7 @@ const Login = () => {
     const onFinish = async (values) => {
         try {
             const { username, password } = values;
-            const res = await request.post('/user/signin', {
+            const res = await request.post('/api/v1/user/signin', {
                 username,
                 password: encryptoPassword(password)
             });

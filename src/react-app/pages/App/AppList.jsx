@@ -20,7 +20,7 @@ const AppList = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const res = await request.get('/app/countries');
+        const res = await request.get('/api/v1/app/countries');
         if (res.code === 200 && Array.isArray(res.data)) {
           //将接口返回的 ["India", "Paskasia"] 转换为 [{value: 'India'}, ...] 格式
           const options = res.data.map(item => ({ value: item, label: item }));
@@ -36,7 +36,7 @@ const AppList = () => {
   const fetchList = async (page = 1, pageSize = 20) => {
     setLoading(true);
     try {
-      const res = await request.get(`/app/list?page=${page}&pageSize=${pageSize}`);
+      const res = await request.get(`/api/v1/app/list?page=${page}&pageSize=${pageSize}`);
       // 注意：根据你的接口文档，数据在 res.data.data 中
       setListData(res.data.data);
       setPagination({
@@ -59,7 +59,7 @@ const AppList = () => {
     }
     setLoading(true);
     try {
-      const res = await request.get(`/app/app?id=${value}`);
+      const res = await request.get(`/api/v1/app/app?id=${value}`);
       if (res.data) {
         // 将单个对象放入数组以展示在 Table 中
         setListData([res.data]);
@@ -95,7 +95,7 @@ const AppList = () => {
         vpn: vpnArray
       };
 
-      await request.post('/app/update', payload);
+      await request.post('/api/v1/app/update', payload);
       message.success('更新成功');
       setIsModalOpen(false);
       fetchList(pagination.current, pagination.pageSize); // 刷新列表
