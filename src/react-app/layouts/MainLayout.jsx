@@ -1,7 +1,7 @@
 // src/layouts/MainLayout.jsx
 import React, { useState } from 'react';
 import { Layout, Menu, Button, theme } from 'antd';
-import { UserOutlined, AppstoreOutlined, LogoutOutlined,DatabaseOutlined,SettingOutlined  } from '@ant-design/icons';
+import { UserOutlined, AppstoreOutlined, LogoutOutlined,DatabaseOutlined,SettingOutlined,FileOutlined  } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
@@ -53,6 +53,14 @@ const MainLayout = () => {
       label:"IP Control",
       children:[
         { key: '/ip/setting', label: 'Setting' },
+      ]
+    },
+    {
+      key:"/files",
+      icon:<FileOutlined/>,
+      label:"File",
+      children:[
+        { key: '/files/upload', label: 'Upload' },
       ]
     }
   ];

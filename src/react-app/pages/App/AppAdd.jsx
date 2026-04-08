@@ -1,10 +1,11 @@
 // src/pages/App/AppAdd.jsx
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Card, message, AutoComplete } from 'antd';
+import { Form, Input, Button, Card, AutoComplete, App } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import request from '../../utils/request';
 
 const AppAdd = () => {
+  const { message } = App.useApp();
   const [loading, setLoading] = useState(false);
   const [countryOptions, setCountryOptions] = useState([]); // 2. 定义状态存储国家列表
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const AppAdd = () => {
     try {
       await request.post('/api/v1/app/add', {
         ...values,
-        vpn:values.vpn && values.vpn.split(/\s+/) || undefined
+        vpn: values.vpn && values.vpn.split(/\s+/) || undefined
       });
       message.success('应用创建成功');
       navigate('/apps/list');

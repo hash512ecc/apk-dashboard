@@ -1,12 +1,13 @@
 // src/pages/Login.jsx
 import React from 'react';
-import { Button, Form, Input, Card, message, theme } from 'antd';
+import { Button, Form, Input, Card, App, theme } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import request from '../utils/request';
 import { useNavigate } from 'react-router-dom';
 import { encryptoPassword } from '../utils/passkey';
 
 const Login = () => {
+    const { message } = App.useApp()
     const navigate = useNavigate();
     const { token: { colorPrimary } } = theme.useToken();
 

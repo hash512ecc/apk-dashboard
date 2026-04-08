@@ -4,7 +4,7 @@ import { message } from 'antd';
 
 // 创建 axios 实例
 const request = axios.create({
-  // baseURL:"http://localhost:8787",
+  // baseURL: "http://localhost:8787",
   baseURL: 'https://bcapkv2.hash512ecc.workers.dev', // 配合 vite.config.js 代理使用，或者直接写完整后端地址
   timeout: 5000,
 });
@@ -15,7 +15,7 @@ request.interceptors.request.use(
     const token = localStorage.getItem('token');
     if (token) {
       // 假设后端需要 Bearer 格式，如果不需要可去掉 'Bearer '
-      config.headers['token'] = `${token}`; 
+      config.headers['token'] = `${token}`;
       // 注意：有些后端可能要求 header key 是 'token' 或 'x-token'，请根据实际调整
     }
     return config;
@@ -27,9 +27,9 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   (response) => {
     const res = response.data;
-    if(response.status == 401){
-        localStorage.removeItem('token');
-        window.location.href = '/login';
+    if (response.status == 401) {
+      localStorage.removeItem('token');
+      window.location.href = '/login';
     }
     // 假设 code === 200 代表成功
     if (res.code !== 200) {

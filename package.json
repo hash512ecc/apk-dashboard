@@ -12,16 +12,17 @@
 		"publish": true
 	},
 	"dependencies": {
-		"hono": "4.10.7",
-		"react": "19.2.0",
-		"react-dom": "19.2.0",
-		"react-router-dom": "^7.9.6",
 		"@ant-design/icons": "^6.1.0",
 		"antd": "^6.0.0",
 		"axios": "^1.13.2",
 		"crypto-js": "^4.2.0",
 		"dayjs": "^1.11.19",
-		"firebase": "^12.6.0"
+		"firebase": "^12.6.0",
+		"hono": "4.10.7",
+		"react": "19.2.0",
+		"react-dom": "19.2.0",
+		"react-dropzone": "^15.0.0",
+		"react-router-dom": "^7.9.6"
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "1.15.3",

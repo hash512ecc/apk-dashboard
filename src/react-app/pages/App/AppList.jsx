@@ -1,11 +1,12 @@
 // src/pages/App/AppList.jsx
 import React, { useEffect, useState } from 'react';
-import { Table, Button, Input, Space, Modal, Form, message, Tag, Switch, Flex, Tooltip, AutoComplete } from 'antd';
+import { Table, Button, Input, Space, Modal, Form, App, Tag, Switch, Flex, Tooltip, AutoComplete } from 'antd';
 import { SearchOutlined, EditOutlined, CopyOutlined, EyeOutlined } from '@ant-design/icons';
 import request from '../../utils/request';
 import dayjs from 'dayjs';
 
 const AppList = () => {
+  const { message } = App.useApp();
   // 列表数据状态
   const [listData, setListData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -79,7 +80,7 @@ const AppList = () => {
   const handleEdit = (record) => {
     setCurrentApp(record);
     form.setFieldsValue(record); // 回填数据
-    form.setFieldValue("vpn",record.vpn.join('\n'));
+    form.setFieldValue("vpn", record.vpn.join('\n'));
     setIsModalOpen(true);
   };
 
