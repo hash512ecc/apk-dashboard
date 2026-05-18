@@ -14,6 +14,7 @@ import FirebaseList from './pages/Firebase/FirebaseList';
 import AddFirebaseApp from './pages/Firebase/AddFirebaseApp';
 import IpAdd from './pages/Ip/Add';
 import S3UploadComponent from './pages/File';
+import FirebaseApps from './pages/FirebaseApps/FirebaseApps';
 
 // 路由守卫组件
 const PrivateRoute = ({ children }) => {
@@ -52,6 +53,7 @@ function App() {
               <Route path="firebase/list" element={<FirebaseList />} />
               <Route path='firebase/add' element={<AddFirebaseApp />} />
 
+              <Route path='firebase-config' element={<FirebaseApps />} />
               {/* IP管理 */}
               <Route path="ip/setting" element={<IpAdd />} />
               {/* 文件上传 */}

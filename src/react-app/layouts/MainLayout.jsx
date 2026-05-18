@@ -56,6 +56,14 @@ const MainLayout = () => {
       ]
     },
     {
+      key:"/firebase-config",
+      icon:<DatabaseOutlined />,
+      label:"Firebase Config",
+      // children:[
+      //   { key: '/firebase-config', label: 'FirebaseSetting' },
+      // ]
+    },
+    {
       key:"/files",
       icon:<FileOutlined/>,
       label:"File",
